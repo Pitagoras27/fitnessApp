@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import ExcerciseList from '../components/excercisesList';
 import Welcome from '../components/Welcome';
-
+import ExcerciseList from '../components/ExcercisesList';
+import AddButton from '../components/AddButton';
 class Excercises extends Component {
   state = {
     data: [{
@@ -35,6 +35,7 @@ class Excercises extends Component {
       <div>
         <Welcome name='Carlos' />
         <ExcerciseList data={data} />
+        <AddButton />
       </ div>)
   }
 }

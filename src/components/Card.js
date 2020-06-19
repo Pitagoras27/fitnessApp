@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import bgCicle from '../images/circles.png';
 import './styles/Card.css';
 
-class Card extends Component {
-  render () {
-    const { bgRight, bgLeft, bgImage, title, description } = this.props;
-    return(
-      <div className='card mx-auto Fitness-Card'
-        style={{ backgroundImage: `url(${bgCicle}), linear-gradient(to right, ${bgRight}, ${bgLeft})` }}>
-        <div className='card-body'>
-          <div className='row center'>
-            <div className='col-6'>
-              <img src={bgImage} alt='fit' />
-            </div>
-            <div className='col-6 Fitness-Card-Info'>
-              <h1>{title}</h1>
-              <p>{description}</p>
-            </div>
+const Card = ({ rightColor, leftColor, image, title, description }) => {
+  return(
+    <div className='card mx-auto Fitness-Card'
+      style={{
+        backgroundImage: `url(${bgCicle}),
+        linear-gradient(to right,
+        ${rightColor || ' #A74CF2'}, ${leftColor || '#617BFB' })`
+      }}>
+      <div className='card-body'>
+        <div className='row center'>
+          <div className='col-6'>
+            <img src={image || ''} alt='fit' />
+          </div>
+          <div className='col-6 Fitness-Card-Info'>
+            <h1>{title}</h1>
+            <p>{description}</p>
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Card;

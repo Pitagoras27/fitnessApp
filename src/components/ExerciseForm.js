@@ -3,7 +3,7 @@ import React from 'react';
 const ExerciseForm = ({ 
   title,
   description,
-  image,
+  img,
   leftColor,
   rightColor,
   onChange,
@@ -35,9 +35,9 @@ const ExerciseForm = ({
         type='text'
         className='form-control'
         placeholder='img'
-        name='image'
+        name='img'
         onChange={onChange}
-        value={image}
+        value={img}
       />
     </div>
     <div className='form-row'>

@@ -9,15 +9,27 @@ class ExcerciseNew extends Component {
     form: {
       title: '',
       description: '',
-      image: '',
+      img: '',
       rightColor: '',
       leftColor: ''
     }
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async e => {
     e.preventDefault();
-    console.log(this.state)
+
+    const bodyPost = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.state.form),
+    };
+
+    const fetchData = await fetch('http://localhost:8000/api/exercises', bodyPost);
+    const responsePost = await fetchData.json();
+
+    console.log(responsePost);
   }
 
   handleChange = (e) => {

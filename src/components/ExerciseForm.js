@@ -35,7 +35,7 @@ const ExerciseForm = ({
         type='text'
         className='form-control'
         placeholder='img'
-        name='img'
+        name='image'
         onChange={onChange}
         value={image}
       />

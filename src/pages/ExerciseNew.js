@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 
 import ExerciseForm from '../components/ExerciseForm';
 import Card from '../components/Card';
+import '../components/styles/ExerciseNew.css';
 
 class ExcerciseNew extends Component {
   state = {
     form: {
       title: '',
       description: '',
-      img: '',
+      image: '',
       rightColor: '',
       leftColor: ''
     }
@@ -33,7 +34,7 @@ class ExcerciseNew extends Component {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col-sm'>
+          <div className='col-sm align-card-form'>
             <Card {...form} />
           </div>
           <div className='col-sm'>

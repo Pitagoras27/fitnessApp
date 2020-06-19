@@ -1,6 +1,7 @@
 import React from 'react';
 
 import bgCicle from '../images/circles.png';
+import emptyImg from '../images/empty.png'
 import './styles/Card.css';
 
 const Card = ({ rightColor, leftColor, image, title, description }) => {
@@ -14,7 +15,7 @@ const Card = ({ rightColor, leftColor, image, title, description }) => {
       <div className='card-body'>
         <div className='row center'>
           <div className='col-6'>
-            <img src={image || ''} alt='fit' />
+            <img src={image || emptyImg} alt='fit' />
           </div>
           <div className='col-6 Fitness-Card-Info'>
             <h1>{title}</h1>

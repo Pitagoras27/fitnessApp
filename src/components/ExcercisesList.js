@@ -6,9 +6,9 @@ const ExcerciseList = ({ data }) => (
   data.map(item => (
     <div key={item.id}>
       <Card
-        bgRight={item.rightColor}
-        bgLeft={item.leftColor}
-        bgImage={item.img}
+        rightColor={item.rightColor}
+        leftColor={item.leftColor}
+        image={item.img}
         title={item.title}
         description={item.description}
       />

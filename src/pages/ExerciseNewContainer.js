@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-import ExerciseForm from '../components/ExerciseForm';
-import Card from '../components/Card';
-import '../components/styles/ExerciseNew.css';
+import NewExercise from '../components/NewExercise';
 import Loading from '../components/Loading';
 import ErrorServer from './500';
+import '../components/styles/ExerciseNew.css';
 
-class ExcerciseNew extends Component {
+class ExcerciseNewContainer extends Component {
   state = {
     form: {
       title: '',
@@ -60,29 +59,17 @@ class ExcerciseNew extends Component {
 
   render() {
     const { form, loading, error } = this.state;
-    console.log(loading, '<<<--')
     if(loading) return <Loading />
     if(error) {
       return <ErrorServer />
     } else {
       return (
-        <div className='container'>
-          <div className='row'>
-            <div className='col-sm align-card-form'>
-              <Card {...form} />
-            </div>
-            <div className='col-sm'>
-              <ExerciseForm
-                { ...form }
-                onChange={this.handleChange}
-                handleSubmit={this.handleSubmit}
-              />
-            </div>
-          </div>
-        </div>
+        <NewExercise 
+          
+        />
       );
     }
   };
 }
 
-export default ExcerciseNew;
+export default ExcerciseNewContainer;

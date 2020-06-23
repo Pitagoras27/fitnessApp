@@ -20,6 +20,7 @@ class ExcerciseNewContainer extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
+    const { history } = this.props;
     this.setState({loading: true });
 
     try {
@@ -38,6 +39,8 @@ class ExcerciseNewContainer extends Component {
         form: responsePost,
         loading: false,
         error: '',
+      }, () => {
+        history.push('./exercises');
       });
 
     } catch (error) {
@@ -54,9 +57,7 @@ class ExcerciseNewContainer extends Component {
         ...this.state.form,
         [e.target.name]: e.target.value,
       }
-    }, () => {
-      console.log(this.state.form);
-    })
+    });
   }
 
   render() {

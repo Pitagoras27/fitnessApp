@@ -21,7 +21,7 @@ class ExcerciseContainer extends Component {
         loading: false,
         error: '',
       });
-      console.log('asdasd')
+
     } catch (error) {
       this.setState({
         loading: false,

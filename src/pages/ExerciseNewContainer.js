@@ -54,6 +54,8 @@ class ExcerciseNewContainer extends Component {
         ...this.state.form,
         [e.target.name]: e.target.value,
       }
+    }, () => {
+      console.log(this.state.form);
     })
   }
 
@@ -65,7 +67,9 @@ class ExcerciseNewContainer extends Component {
     } else {
       return (
         <NewExercise 
-          
+          {...form}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
       );
     }

@@ -1,12 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
-import Welcome from '../components/Welcome';
-import ExcerciseList from '../components/ExcercisesList';
-import AddButton from '../components/AddButton';
+import Exercise from '../components/Exercise';
 import Loading from '../components/Loading';
 import ErrorServer from './500';
 
-class Excercises extends Component {
+class ExcerciseContainer extends Component {
   state = {
     data: [],
     loading: true,
@@ -34,19 +32,16 @@ class Excercises extends Component {
 
   render() {
     const { data, loading, error } = this.state;
+
     if (loading) return <Loading />; 
     if (error) {
       return <ErrorServer />
     } else {
       return (
-        <div>
-          <Welcome name='Carlos' />
-          <ExcerciseList data={data} />
-          <AddButton />
-        </ div>
+        <Exercise data={data} />
       )
     } 
   }
 }
 
-export default Excercises;
+export default ExcerciseContainer;

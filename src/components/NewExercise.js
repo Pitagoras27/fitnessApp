@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Card from './Card';
-import ExerciseForm from '../pages/ExerciseNewContainer';
+import ExerciseForm from './ExerciseForm';
 
-const NewExercise = ({ form, handleChange, handleSubmit }) => (
+const NewExercise = ({form, handleChange, handleSubmit}) => (
   <div className='container'>
     <div className='row'>
       <div className='col-sm align-card-form'>

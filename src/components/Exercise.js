@@ -4,7 +4,7 @@ import Welcome from './Welcome';
 import ExcerciseList from './ExcercisesList';
 import AddButton from './AddButton';
 
-const Exersice = (props) => (
+const Exercise = (props) => (
   <div>
     <Welcome name='Carlos!' />
     <ExcerciseList data={props.data} />
@@ -12,4 +12,4 @@ const Exersice = (props) => (
   </ div>
 );
 
-export default Exersice;
+export default Exercise;
